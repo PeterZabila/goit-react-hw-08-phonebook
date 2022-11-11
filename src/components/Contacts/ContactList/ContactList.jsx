@@ -11,7 +11,6 @@ const ContactList = ({ contacts, removeContact }) => {
             <Number >{contact.number}</Number>
           </Details>
           <Button
-          
             type="button"
             onClick={() => removeContact(contact.id)}
           >

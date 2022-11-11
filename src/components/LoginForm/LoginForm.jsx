@@ -1,6 +1,8 @@
 import useForm from '../../service/hooks/useForm';
+import { nanoid } from '@reduxjs/toolkit';
+import { useMemo } from "react";
 import { Button } from '@mui/material';
-import {Container, Input, Label, Form } from "./LoginForm.styled";
+import {Container, Input, Label } from "./LoginForm.styled";
 
 import { initialState } from './InitialState';
 
@@ -12,12 +14,16 @@ const LoginForm = ({ onSubmit }) => {
 
   const { email, password } = state;
 
+  const emailId = useMemo(()=> nanoid(), []);
+  const passwordId = useMemo(()=> nanoid(), []);
+
   return (
-    <Form action="" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <Container>
         <Label htmlFor="">
         </Label>
         <Input
+        id={emailId}
           value={email}
           name="email"
           onChange={handleChange}
@@ -29,6 +35,7 @@ const LoginForm = ({ onSubmit }) => {
         <Label htmlFor="">
         </Label>
         <Input
+        id={passwordId}
           value={password}
           name="password"
           onChange={handleChange}
@@ -41,7 +48,7 @@ const LoginForm = ({ onSubmit }) => {
           Login
         </Button>
       </Container>
-    </Form>
+    </form>
   );
 };
 

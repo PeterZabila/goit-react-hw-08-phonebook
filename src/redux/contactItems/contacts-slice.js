@@ -12,7 +12,6 @@ const initialState = {
   error: null,
 };
 
-/** using createSlice */
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -55,15 +54,7 @@ const contactsSlice = createSlice({
       store.error = payload;
     },
   },
-  // reducers: {
-  //   addContact: (store, { payload }) => {
-  //     store.push(payload);
-  //   },
-  //   removeContact: (store, { payload }) =>
-  //     store.filter(({ id }) => id !== payload),
-  // },
+
 });
 
-// export const { addContact, removeContact } = contactsSlice.actions;
-// console.log(contactsSlice.reducer);
 export default contactsSlice.reducer;
