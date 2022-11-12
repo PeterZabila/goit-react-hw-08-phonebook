@@ -5,10 +5,20 @@ import { Section, Input, Label } from "./RegisterForm.styled";
 import { initialState } from './initialState';
 
 const RegisterForm = ({ onSubmit }) => {
-  const { state, handleChange, handleSubmit } = useForm({
+  const { state, handleChange } = useForm({
     initialState,
     onSubmit,
   });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    onSubmit({
+      name: data.get('name'),
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
 
   const { name, email, password } = state;
 

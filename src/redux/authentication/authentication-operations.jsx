@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../service/api/authentication';
 
 export const signup = createAsyncThunk(
-  'authentication/signup',
+  '/users/signup',
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.signup(data);
@@ -20,7 +20,7 @@ export const signup = createAsyncThunk(
 );
 
 export const login = createAsyncThunk(
-  'authentication/login',
+  '/users/login',
   async (data, { rejectWithValue }) => {
     try {
       const result = await api.login(data);
@@ -37,7 +37,7 @@ export const login = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk(
-  'authentication/logout',
+  '/users/logout',
   async (_, { rejectWithValue }) => {
     try {
       const result = await api.logout();
@@ -54,7 +54,7 @@ export const logout = createAsyncThunk(
 );
 
 export const current = createAsyncThunk(
-  'authentication/current',
+  '/users/current',
   async (_, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState();
