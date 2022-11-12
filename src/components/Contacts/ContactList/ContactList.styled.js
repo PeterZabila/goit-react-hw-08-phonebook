@@ -4,12 +4,11 @@ export const Details = styled.p`
     margin: 0;
 `;
 
-export const List = styled.p`
+export const List = styled.ul`
     padding: 0;
 `;
 
-
-export const ListItem = styled.p`
+export const ListItem = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: baseline;
