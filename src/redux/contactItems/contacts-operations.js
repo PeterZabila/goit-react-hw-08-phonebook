@@ -39,8 +39,8 @@ export const removeContact = createAsyncThunk(
   'contacts/remove',
   async (id, { rejectWithValue }) => {
     try {
-      await api.removeContact(id);
-      return id;
+      const response = await api.removeContact(id);
+      return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
